@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "icon": "npx iconfont-rn",
+    "icon": "npx iconfont-rn && npx react-native-asset",
     "release": "cd ./android && ./gradlew assembleRelease",
     "clean": "cd ./android && ./gradlew clean",
     "pod": "cd ./ios && pod install --no-repo-update",

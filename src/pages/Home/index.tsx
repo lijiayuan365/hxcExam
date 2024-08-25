@@ -11,18 +11,15 @@ import {
   Carousel,
 } from '@ant-design/react-native';
 
-const Home: React.FC = () => {
+const Home: React.FC = ({navigation}: any) => {
   const data = Array.from(new Array(9)).map((_val, i) => ({
     icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
-    text: `Name${i}`,
+    text: `功能${i}`,
   }));
 
   const GridItem = ({data}: any) => {
     const handle = () => {
-      Alert.alert('Alert', 'Alert', [{text: 'OK'}]);
-      console.log('====================================');
-      console.log('ccc');
-      console.log('====================================');
+      navigation.navigate('Order', {title: data.text});
     };
     return (
       <View style={{flex: 1, justifyContent: 'center'}}>
@@ -70,7 +67,7 @@ const Home: React.FC = () => {
       {/* </WingBlank> */}
       <WingBlank>
         <View style={styles.subTitle}>
-          <View style={styles.subTitle}>代办事项</View><View style={styles.dot}>10</View>
+          <View style={styles.subTitle}>代办事项</View><View style={[styles.dot, {marginLeft: 5}]}>10</View>
         </View>
       </WingBlank>
       <View style={styles.waitArea}>
@@ -89,6 +86,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   subTitle: {
+    alignItems: 'center',
     marginVertical: 10,
     fonSize: 24,
     fontWeight: '800',

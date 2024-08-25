@@ -19,6 +19,7 @@ export type BottomTabParamList = {
 export type StackParamList = {
   BottomTab: undefined;
   Login: undefined;
+  Order: undefined;
 };
 
 // 导航组件类型声明 eg:@/config/routesConfig
